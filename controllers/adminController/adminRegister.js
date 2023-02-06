@@ -43,10 +43,38 @@ const adminRegister = async (req, res) => {
     }
   };
 
-  const { company, email, address, phone, website, password, cpassword } =
-    req.body;
+  const {
+    company,
+    email,
+    username,
+    business,
+    address,
+    city,
+    state,
+    country,
+    zip,
+    gstin,
+    phone,
+    website,
+    password,
+    cpassword,
+  } = req.body;
 
-  if (!company || !email || !address || !phone || !password || !cpassword) {
+  if (
+    !company ||
+    !email ||
+    !username ||
+    !business ||
+    !address ||
+    !city ||
+    !state ||
+    !country ||
+    !zip ||
+    !gstin ||
+    !phone ||
+    !password ||
+    !cpassword
+  ) {
     res.status(422).json({ error: "Fill All The Details" });
   }
 
@@ -62,7 +90,14 @@ const adminRegister = async (req, res) => {
       const finalAdmin = new Admin({
         company,
         email,
+        username,
+        business,
         address,
+        city,
+        state,
+        country,
+        zip,
+        gstin,
         phone,
         website,
         password,

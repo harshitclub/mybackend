@@ -61,6 +61,7 @@ const userRegister = async (req, res) => {
     position,
     country,
     profile,
+    admin,
     password,
     cpassword,
   } = req.body;
@@ -75,6 +76,7 @@ const userRegister = async (req, res) => {
     !company ||
     !position ||
     !country ||
+    !admin ||
     !password ||
     !company
   ) {
@@ -100,6 +102,7 @@ const userRegister = async (req, res) => {
         company,
         position,
         country,
+        admin,
         profile,
         password,
         cpassword,

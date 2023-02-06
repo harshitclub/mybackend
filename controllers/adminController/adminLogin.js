@@ -44,7 +44,7 @@ const adminLogin = async (req, res) => {
     }
   };
 
-  const JWTSECRET = process.env.JWTSECTRET;
+  const JWTSECRET = process.env.ADMINJWTSECRET;
 
   const { email, password } = req.body;
 

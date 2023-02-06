@@ -11,10 +11,27 @@ const adminSchema = new Schema({
   },
   email: {
     type: String,
-    required: [true, "Please Company Email Address"],
+    required: [true, "Please Enter Company Email Address"],
     validate: [validator.isEmail, "Please Enter Valid Email Address"],
     unique: true,
     lowercase: true,
+    trim: true,
+  },
+  username: {
+    type: String,
+    required: [true, "Please Enter Company Username"],
+    trim: true,
+  },
+  business: {
+    type: String,
+    required: [true, "Please Enter Company Business"],
+  },
+
+  phone: {
+    type: Number,
+    required: [true, "Please Enter Company Phone Number"],
+    unique: true,
+    maxLength: 10,
     trim: true,
   },
   address: {
@@ -22,12 +39,25 @@ const adminSchema = new Schema({
     required: [true, "Please Enter Company Office Address"],
     trim: true,
   },
-  phone: {
-    type: Number,
-    required: [true, "Please Enter Company Phone Number"],
-    unique: true,
-    maxLength: 10,
-    trim: true,
+  city: {
+    type: String,
+    required: [true, "Please Enter Company City"],
+  },
+  state: {
+    type: String,
+    required: [true, "Please Enter Company State"],
+  },
+  country: {
+    type: String,
+    required: [true, "Please Enter Company Country"],
+  },
+  zip: {
+    type: String,
+    required: [true, "Please Enter Company Area Pin Code"],
+  },
+  gstin: {
+    type: String,
+    required: [true, "Please Enter Company GSTIN Number"],
   },
   website: {
     type: String,

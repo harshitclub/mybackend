@@ -44,6 +44,10 @@ const courseSchema = new Schema({
     trim: true,
     require: [true, "Please Enter Description"],
   },
+  admin: {
+    type: String,
+    required: true,
+  },
   createdAt: {
     type: Date,
     default: Date.now,

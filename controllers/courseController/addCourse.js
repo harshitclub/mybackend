@@ -11,6 +11,7 @@ const addCourse = async (req, res) => {
     courseFormat,
     courseTeacher,
     description,
+    admin,
   } = req.body;
 
   if (
@@ -22,7 +23,8 @@ const addCourse = async (req, res) => {
     !courseLanguage ||
     !courseFormat ||
     !courseTeacher ||
-    !description
+    !description ||
+    !admin
   ) {
     res.status(422).json({ error: "Fill All The Details" });
   }
@@ -42,6 +44,7 @@ const addCourse = async (req, res) => {
         courseFormat,
         courseTeacher,
         description,
+        admin,
       });
       const storeCourse = await finalCourse.save();
     }

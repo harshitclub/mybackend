@@ -60,6 +60,10 @@ const userSchema = new Schema({
     type: Boolean,
     default: false,
   },
+  admin: {
+    type: String,
+    required: true,
+  },
   password: {
     type: String,
     require: true,

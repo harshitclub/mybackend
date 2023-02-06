@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const userLogin = async (req, res) => {
-  const JWTSECRET = process.env.JWTSECTRET;
+  const JWTSECRET = process.env.USERJWTSECRET;
 
   const { email, password } = req.body;
 
